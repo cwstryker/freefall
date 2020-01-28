@@ -1,26 +1,31 @@
 from freefall import FallingObject
 from freefall import simulate
+from freefall import find_vx_vy
+
 import matplotlib.pyplot as plt
 
 DRAG_COEF = 0.019   # kg/m
 MASS = 0.15         # kg
 X_INITIAL = 0       # m
-Y_INITIAL = 4.5     # m
-VX_INITIAL = 0      # m/s
-VY_INITIAL = 0      # m/s
+Y_INITIAL = 27/40   # m
+SPEED = 10          # m/s
+ANGLE = 50          # degrees
 
-power_cell = FallingObject(mass=MASS, drag=DRAG_COEF)
-results = simulate(power_cell, X_INITIAL, Y_INITIAL, VX_INITIAL, VY_INITIAL)
-
-# Plot the results
 fig, ax = plt.subplots()
-ax.plot(results.t, results.y)
+
+for i in range(1, 10, 1):
+    vx_initial, vy_initial = find_vx_vy(speed=i, angle=ANGLE)
+    power_cell = FallingObject(mass=MASS, drag=DRAG_COEF)
+    results = simulate(power_cell, X_INITIAL, Y_INITIAL, vx_initial, vy_initial)
+
+    # Plot the results
+    ax.plot(results.x, results.y)
 
 # Format and annotate the graph
 ax.grid()
 ax.text(0.01, 0.4, f"Drag Coefficient = {power_cell.drag:.5} kg/m")
 ax.text(0.01, 0.1, f"Flight Time = {results.t[-1]:.3} s")
-plt.xlabel("Time (s)")
+plt.xlabel("Distance (m)")
 plt.ylabel("Height (m)")
 plt.title("Simulation of Power Cell Free Fall")
 
