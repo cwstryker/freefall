@@ -1,2 +1,1 @@
-from .simulator import FallingObject
-from .simulator import simulate
+from .simulator import simulate_earth_surface
