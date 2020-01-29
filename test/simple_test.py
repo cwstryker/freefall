@@ -1,5 +1,5 @@
 from freefall import FallingObject
-from freefall import simulate
+from freefall import simulate_earth_surface
 from freefall import find_vx_vy
 
 import matplotlib.pyplot as plt
@@ -16,7 +16,7 @@ fig, ax = plt.subplots()
 for i in range(1, 10, 1):
     vx_initial, vy_initial = find_vx_vy(speed=i, angle=ANGLE)
     power_cell = FallingObject(mass=MASS, drag=DRAG_COEF)
-    results = simulate(power_cell, X_INITIAL, Y_INITIAL, vx_initial, vy_initial)
+    results = simulate_earth_surface(power_cell, X_INITIAL, Y_INITIAL, vx_initial, vy_initial)
 
     # Plot the results
     ax.plot(results.x, results.y)
