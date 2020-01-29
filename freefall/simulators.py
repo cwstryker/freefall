@@ -1,17 +1,11 @@
 from collections import namedtuple
-import math
+
 
 SimResult = namedtuple("SimResult", ["x", "y", "vx", "vy", "ax", "ay", "t"])
 
 
 def terminate_y_less_zero(x, y, vx, vy, ax, ay, t):
     return y[-1] < 0
-
-def find_vx_vy(*, speed, angle):
-    rads = math.radians(angle)
-    vx = speed * math.acos(rads)
-    vy = speed * math.asin(rads)
-    return vx, vy
 
 def simulate_earth_surface(
     target,
