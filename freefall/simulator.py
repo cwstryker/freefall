@@ -1,9 +1,11 @@
 from collections import namedtuple
 import math
 
-FallingObject = namedtuple("FallingObject", ["mass", "drag"])
 SimResult = namedtuple("SimResult", ["x", "y", "vx", "vy", "ax", "ay", "t"])
 
+
+def terminate_y_less_zero(x, y, vx, vy, ax, ay, t):
+    return y[-1] < 0
 
 def find_vx_vy(*, speed, angle):
     rads = math.radians(angle)
@@ -11,7 +13,7 @@ def find_vx_vy(*, speed, angle):
     vy = speed * math.asin(rads)
     return vx, vy
 
-def simulate(
+def simulate_earth_surface(
     target,
     x_initial,
     y_initial,
@@ -19,7 +21,9 @@ def simulate(
     vy_initial=0,
     epsilon=0.001,
     gravity=9.81,
+    terminator=terminate_y_less_zero,
 ):
+    """Returns a SimResult object with the """
 
     x = list()
     y = list()
@@ -63,7 +67,7 @@ def simulate(
 
         t.append(t[-1] + epsilon)
 
-        if y[-1] < 0:
+        if terminator(x, y, vx, vy, ax, ay, t):
             break
 
     return SimResult(x=x, y=y, vx=vx, vy=vy, ax=ax, ay=ay, t=t)
