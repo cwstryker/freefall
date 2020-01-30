@@ -3,8 +3,8 @@ import math
 
 def find_vx_vy(*, speed, angle):
     rads = math.radians(angle)
-    vx = speed * math.acos(rads)
-    vy = speed * math.asin(rads)
+    vx = speed * math.cos(rads)
+    vy = speed * math.sin(rads)
     return vx, vy
 
 

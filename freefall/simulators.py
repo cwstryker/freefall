@@ -3,6 +3,8 @@ from collections import namedtuple
 
 SimResult = namedtuple("SimResult", ["x", "y", "vx", "vy", "ax", "ay", "t"])
 
+def terminate_vy_less_zero(x, y, vx, vy, ax, ay, t):
+    return vy[-1] < 0
 
 def terminate_y_less_zero(x, y, vx, vy, ax, ay, t):
     return y[-1] < 0
