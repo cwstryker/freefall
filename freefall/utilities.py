@@ -2,15 +2,6 @@
 utilities.py
 
 A collection of utility functions to support simulations.
- 
-Developed by FIRST Robotics Competition Team 6343 - Steel Ridge Robotics
-
-    Strong 
-        Trustworthy
-            Empowering
-                Effective
-                    Leadership
-
 """
 
 import math
