@@ -1,6 +1,5 @@
 from freefall.falling_objects import frc_power_cell
 from freefall.simulators import simulate_earth_surface
-from freefall.utilities import find_vx_vy, float_range
 
 import matplotlib.pyplot as plt
 
