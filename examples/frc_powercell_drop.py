@@ -4,12 +4,14 @@ from freefall.simulators import simulate_earth_surface
 import matplotlib.pyplot as plt
 
 
-X_INITIAL = 0       # m
-Y_INITIAL = 4.5     # m
-VX_INITIAL = 0      # m/s
-VY_INITIAL = 0      # m/s
+X_INITIAL = 0  # m
+Y_INITIAL = 4.5  # m
+VX_INITIAL = 0  # m/s
+VY_INITIAL = 0  # m/s
 
-results = simulate_earth_surface(frc_power_cell, X_INITIAL, Y_INITIAL, VX_INITIAL, VY_INITIAL)
+results = simulate_earth_surface(
+    frc_power_cell, X_INITIAL, Y_INITIAL, VX_INITIAL, VY_INITIAL
+)
 
 # Plot the results
 fig, ax = plt.subplots()

@@ -17,7 +17,7 @@ setup(
     author_email="cwsaccts@stryker5.org",
     description="A Python package module for simulating falling objects with aerodynamic drag.",
     long_description=long_description,
-    python_requires='>=3.6',
+    python_requires=">=3.6",
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Education",
