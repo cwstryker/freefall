@@ -1,6 +1,5 @@
-# Freefall Package
-
-A Python package module for simulating falling objects with aerodynamic drag.
+"""
+A Python package module for simulating falling objects with simple aerodynamic drag.
  
 Developed by FIRST Robotics Competition Team 6343 - Steel Ridge Robotics
 
@@ -9,3 +8,7 @@ Developed by FIRST Robotics Competition Team 6343 - Steel Ridge Robotics
             Empowering
                 Effective
                     Leadership
+
+"""
+
+__VERSION__ = "1.0.0b1"
