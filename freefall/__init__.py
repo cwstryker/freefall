@@ -11,4 +11,4 @@ Developed by FIRST Robotics Competition Team 6343 - Steel Ridge Robotics
 
 """
 
-__VERSION__ = "0.1a1"
+__VERSION__ = "1.0.0b1"
